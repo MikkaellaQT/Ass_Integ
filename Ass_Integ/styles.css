@@ -1,6 +1,6 @@
 body {
-    background: url('https://source.unsplash.com/1600x900/?space') no-repeat center center fixed;
-    background-size: cover;
+    background: black; /* Fallback color */
+    overflow: hidden; /* Prevent scrollbars */
     font-family: 'Arial', sans-serif;
     color: white;
     display: flex;
@@ -12,10 +12,12 @@ body {
 
 .container {
     background: rgba(0, 0, 0, 0.7);
-    padding: 20px;
+    padding: 90px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
     text-align: center;
+    position: relative; /* Position relative for absolute children */
+    z-index: 1; /* Ensure the container is above the stars */
 }
 
 h1 {
@@ -44,4 +46,21 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+/* Starfield Animation */
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 1.5s infinite alternate;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
 }
