@@ -3,45 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Login | Space Exploration</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
 </head>
 <body>
     <div class="container">
-        <h1>Log In Form</h1>
-        <form id="loginForm">
-            <div class="input-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+        <div class="login-box">
+            <h1>Space Exploration Login</h1>
+            <p>Embark on your journey to explore the universe. Log in to start your space adventure!</p>
+
+            <form id="loginForm" action="login.php" method="POST">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+
+            <div class="links">
+                <a href="#" id="forgotPassword" class="link">Forgot Password?</a> <br>
+                <a href="#" id="signUp" class="link">Create Account</a>
             </div>
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter password" required>
-            </div>
-            <button type="submit">Login</button>
-        </form>
-        <div class="links">
-            <a href="#" id="forgotPassword">Forgot Password?</a> <br>
-            <a href="#" id="signUp"> Create Account Sign Up</a>
         </div>
     </div>
 
-    <script>
-        const starCount = 180; 
-        const body = document.body;
-    
-        for (let i = 0; i < starCount; i++) {
-            const star = document.createElement('div');
-            star.className = 'star';
-            const size = Math.random() * 3 + 1; 
-            star.style.width = `${size}px`;
-            star.style.height = `${size}px`;
-            star.style.top = `${Math.random() * 100}vh`;
-            star.style.left = `${Math.random() * 100}vw`;
-            star.style.animationDuration = `${Math.random() * 2 + 1}s`; 
-            star.style.animationDelay = `${Math.random() * 5}s`; 
-            body.appendChild(star);
-        }
-    </script>
+    <script src="script.js"></script> <!-- External JavaScript file -->
 </body>
 </html>
